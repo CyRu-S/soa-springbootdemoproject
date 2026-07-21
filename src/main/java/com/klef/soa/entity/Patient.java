@@ -1,5 +1,10 @@
 package com.klef.soa.entity;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,6 +44,12 @@ public class Patient {
 	
 	@Column(nullable = false)
 	private String remarks;
+	
+	@CreationTimestamp
+	private LocalDateTime createdAt;
+	
+	@UpdateTimestamp
+	private LocalDateTime updatedAt;
 	
 	
 	public long getId() {
@@ -113,18 +124,35 @@ public class Patient {
 		this.remarks = remarks;
 	}
 
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	
 	@Override
 	public String toString() {
-	    return "Patient{" +
-	            "\n  id=" + id +
-	            ",\n  name='" + name + '\'' +
-	            ",\n  gender='" + gender + '\'' +
-	            ",\n  email='" + email + '\'' +
-	            ",\n  contact='" + contact + '\'' +
-	            ",\n  age=" + age +
-	            ",\n  status='" + status + '\'' +
-	            ",\n  location='" + location + '\'' +
-	            ",\n  remarks='" + remarks + '\'' +
-	            "\n}";
+		return "Patient{" +
+				"\n  id=" + id +
+				",\n  name='" + name + '\'' +
+				",\n  gender='" + gender + '\'' +
+				",\n  email='" + email + '\'' +
+				",\n  contact='" + contact + '\'' +
+				",\n  age=" + age +
+				",\n  status='" + status + '\'' +
+				",\n  location='" + location + '\'' +
+				",\n  remarks='" + remarks + '\'' +
+				"\n}";
 	}
 }
