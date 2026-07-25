@@ -153,6 +153,8 @@ public class Patient {
 				",\n  status='" + status + '\'' +
 				",\n  location='" + location + '\'' +
 				",\n  remarks='" + remarks + '\'' +
+				",\n  createdAt= '" + createdAt + '\'' +
+				",\n  updatedAt= '" + updatedAt + '\'' +
 				"\n}";
 	}
 }
