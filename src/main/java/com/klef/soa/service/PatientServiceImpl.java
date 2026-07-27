@@ -61,8 +61,13 @@ public class PatientServiceImpl implements PatientService{
 	}
 
 	@Override
-	public List<Patient> displayPatientByGender(String gender) {
+	public List<Patient> displayPatientsByGender(String gender) {
 		return repo.findByGender(gender);
 	}
-	
+
+	@Override
+	public Long displayPatientCount() {
+		return repo.count();
+	}
+
 }
